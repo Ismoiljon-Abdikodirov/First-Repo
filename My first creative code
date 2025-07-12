@@ -1,0 +1,21 @@
+def counter(word, text):
+    """
+    This function counts how many times a specific word appears in a given text.
+    
+    Parameters:
+    word (str): The target word to count (e.g., "little").
+    text (str): The body of text in which the word count will be performed.
+    
+    The function:
+    - Converts the text to lowercase to make the search case-insensitive.
+    - Splits the text into words.
+    - Removes punctuation such as commas and periods from each word.
+    - Counts how many times the cleaned word matches the target word.
+    
+    Returns:
+    int: The number of times the target word appears in the text.
+    """
+    text = text.lower()
+    words = text.split()
+    cleaned_words = [w.strip(".,") for w in words]
+    return cleaned_words.count(word.lower())
